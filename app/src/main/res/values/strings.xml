@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Tinh Eywan</string>
+    <string name="let_is_login">Let's Login</string>
+    <string name="done_have_an_account_register">Don't have an account? Register</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="login">Login</string>
+    <string name="let_register">Let's Register</string>
+    <string name="done_have_an_account_log_in">Don't have an account? log in</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="reset_password_message">we will send you the password reset link to your email
+    </string>
+    <string name="cancel">Cancel</string>
+    <string name="send">Send</string>
+    <string name="search">Search Now</string>
+    <string name="best_products">Best Products</string>
+    <string name="best_deals">Best Deals</string>
+    <string name="add_to_card">Add To Card</string>
+    <string name="color">Color</string>
+    <string name="size">Size</string>
+    <string name="original">Original</string>
+    <string name="nike">Nike</string>
+
+
+</resources>
