@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "308678035131",
+    "project_id": "tinh-eywan",
+    "storage_bucket": "tinh-eywan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308678035131:android:0fe29ca01b2fd222230b9e",
+        "android_client_info": {
+          "package_name": "kh.edu.rupp.ite.tinheywan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf53haQU9-1bQ4FHj1r6QXvjFt_hia_fM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
