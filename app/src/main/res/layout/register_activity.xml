@@ -1,131 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
     <ImageView
-        android:layout_gravity="center"
+        android:id="@+id/imageView"
         android:layout_width="130dp"
         android:layout_height="60dp"
-        android:layout_marginTop="45dp"
-        android:src="@drawable/logo_tinh"/>
+        android:src="@drawable/logo_tinh"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055" />
+
     <TextView
-        android:layout_gravity="center"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:text="@string/let_register"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="25sp"/>
-    <TextView
-        android:layout_gravity="center"
-        android:layout_width="220dp"
-        android:layout_height="42dp"
-        android:text="@string/done_have_an_account_log_in"
-        android:textStyle="italic"
-        android:textSize="15sp"/>
-
-
-    <androidx.cardview.widget.CardView
-        android:layout_marginLeft="40dp"
-        app:cardCornerRadius="7dp"
-        android:layout_marginTop="17dp"
-        android:layout_width="300dp"
-        android:layout_height="48dp">
-
-        <EditText
-            android:gravity="center"
-            android:background="#F1EFEF"
-            android:hint="@string/first_name"
-            android:id="@+id/editTextTextFirstName"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:ems="10"
-            android:inputType="textPersonName" />
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_marginLeft="40dp"
-        app:cardCornerRadius="7dp"
-        android:layout_marginTop="30dp"
-        android:layout_width="300dp"
-        android:layout_height="48dp">
-
-
-        <EditText
-            android:id="@+id/editTextTextLastName"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#F1EFEF"
-            android:ems="10"
-            android:hint="@string/last_name"
-            android:inputType="textPersonName"
-            android:gravity="center" />
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_marginLeft="40dp"
-        app:cardCornerRadius="7dp"
-        android:layout_marginTop="30dp"
-        android:layout_width="300dp"
-        android:layout_height="48dp">
-
-
-        <EditText
-            android:id="@+id/editTextTextEmail"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#F1EFEF"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress" />
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_marginLeft="40dp"
-        app:cardCornerRadius="7dp"
-        android:layout_marginTop="30dp"
-        android:layout_width="300dp"
-        android:layout_height="48dp">
-
-
-        <EditText
-            android:id="@+id/editTextTextPassword3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#F1EFEF"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:gravity="center" />
-    </androidx.cardview.widget.CardView>
-    <Button
-
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
-        android:id="@+id/button"
-        android:layout_width="150dp"
+        android:id="@+id/tv_lets_login"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:paddingRight="10dp"
-        android:text="@string/register" />
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_marginLeft="36px"
-            android:layout_width="420px"
-            android:layout_height="200px"
-            android:src="@drawable/facebook"/>
+        android:fontFamily="@font/poppins_thin"
+        android:gravity="center"
+        android:text="@string/register"
+        android:textColor="@color/g_black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/guideline8" />
 
-        <ImageView
-            android:layout_marginRight="36px"
-            android:layout_gravity="end"
-            android:layout_width="420px"
-            android:layout_height="200px"
-            android:src="@drawable/google" />
+    <TextView
+        android:id="@+id/tv_dont_have_an_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:text="@string/done_have_an_account_log_in"
+        android:textColor="@color/g_hint"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/tv_lets_login"
+        app:layout_constraintStart_toStartOf="@id/tv_lets_login"
+        app:layout_constraintTop_toBottomOf="@id/tv_lets_login" />
 
-    </androidx.cardview.widget.CardView>
+    <EditText
+        android:id="@+id/ed_first_name"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_white_background"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:hint="@string/first_name"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toBottomOf="@id/tv_dont_have_an_account"
+        android:singleLine="true"/>
+
+    <EditText
+        android:id="@+id/ed_last_name"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_white_background"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:hint="@string/last_name"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toBottomOf="@id/ed_first_name"
+        android:singleLine="true"/>
+
+    <EditText
+        android:id="@+id/ed_email"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_white_background"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:hint="@string/email"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toBottomOf="@id/ed_last_name"
+        android:singleLine="true"/>
+
+    <EditText
+        android:id="@+id/ed_password"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_white_background"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:hint="@string/password"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toBottomOf="@id/ed_email"
+        android:singleLine="true"/>
 
 
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_background"
+        android:fontFamily="@font/poppins_light"
+        android:text="@string/register"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/ed_last_name"
+        app:layout_constraintStart_toStartOf="@id/ed_last_name"
+        app:layout_constraintTop_toBottomOf="@id/ed_password" />
 
-</LinearLayout>
+
+    <ImageView
+        android:id="@+id/btn_facebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_facebook_login"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toBottomOf="@id/btn_login" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/g_facebook"
+        app:layout_constraintBottom_toBottomOf="@id/btn_facebook"
+        app:layout_constraintEnd_toEndOf="@id/btn_facebook"
+        app:layout_constraintStart_toStartOf="@id/btn_facebook"
+        app:layout_constraintTop_toTopOf="@id/btn_facebook" />
+
+    <ImageView
+        android:id="@+id/btn_google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_google_login"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@id/btn_login" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/g_google"
+        app:layout_constraintBottom_toBottomOf="@id/btn_google"
+        app:layout_constraintEnd_toEndOf="@id/btn_google"
+        app:layout_constraintStart_toStartOf="@id/btn_google"
+        app:layout_constraintTop_toTopOf="@id/btn_google" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.09" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.89" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.14" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1751026" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
