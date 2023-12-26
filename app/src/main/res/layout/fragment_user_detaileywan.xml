@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/detail_imageslider2"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ViewFlipper
+            android:id="@+id/detail_imageslider"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:flipInterval="5000"
+            android:autoStart="true"
+            android:inAnimation="@android:anim/slide_in_left"
+            android:outAnimation="@android:anim/slide_out_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <!--        <ImageView-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="match_parent"-->
+            <!--            android:src="@drawable/accessory" />-->
+
+        </ViewFlipper>
+
+        <ImageView
+            android:id="@+id/detail_goback"
+            android:layout_width="65dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentTop="true"
+            app:srcCompat="@drawable/goback" />
+
+        <ImageView
+            android:id="@+id/detail_left"
+            android:layout_width="73dp"
+            android:layout_height="68dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/left"
+            />
+
+        <ImageView
+            android:id="@+id/detail_right"
+            android:layout_width="73dp"
+            android:layout_height="68dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+
+            android:src="@drawable/right" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/detail_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Add to card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4" />
+
+    <TextView
+        android:id="@+id/detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/passionbold"
+        android:text="SELL CLOTHES"
+        android:textColor="@color/black"
+        android:textSize="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_imageslider2" />
+
+
+    <TextView
+        android:id="@+id/detail_price2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/russo"
+        android:text="$"
+        android:textColor="@color/green"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toStartOf="@+id/detail_price"
+        app:layout_constraintTop_toBottomOf="@+id/detail_imageslider2" />
+
+    <TextView
+        android:id="@+id/detail_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/russo"
+        android:text="10"
+        android:textColor="@color/green"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_imageslider2" />
+
+    <TextView
+        android:id="@+id/detail_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/passionbold"
+        android:text="CLOTHES"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_title" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_type">
+
+        <TextView
+            android:id="@+id/detail_description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/vip"
+            android:padding="20dp"
+            android:text="LURK THORK THORK "
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

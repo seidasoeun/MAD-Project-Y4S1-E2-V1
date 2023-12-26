@@ -31,6 +31,8 @@ class UserAdapter(
         var name : TextView = itemView.findViewById(R.id.user_username)
         val email : TextView = itemView.findViewById(R.id.user_email)
         val image : ImageView = itemView.findViewById(R.id.user_image)
+
+        val user_delete : ImageView = itemView.findViewById(R.id.user_delete)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -44,14 +46,11 @@ class UserAdapter(
         val user_id = Eywan.data!![position].id
         holder.name.text = Eywan.data!![position].name
         holder.email.text = Eywan.data!![position].email
+        // convert string image to URI
         Glide.with(holder.itemView.context).load(Uri.parse(Eywan.data!![position].image)).into(holder.image)
 
-//
-        holder.itemView.setOnClickListener {
-            // recycler click event
-//            val intent = Intent(it.context,DetailActivity::class.java)
-//            intent.putExtra("i_title",EywanList.title)
-//            it.context.startActivities(arrayOf(intent))
+// Delete User
+        holder.user_delete.setOnClickListener {
 
             val sharedPreferences = it.context.getSharedPreferences("localstorage", Context.MODE_PRIVATE)
             var token = sharedPreferences.getString("TOKEN","").toString()

@@ -2,9 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="130dp"
+    android:background="@color/vip"
     android:orientation="horizontal">
 
     <ImageView
+        android:id="@+id/medium_image"
         android:layout_width="130dp"
         android:layout_height="match_parent"
         android:src="@drawable/account_nav"/>
@@ -15,30 +17,63 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/medium_title"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:paddingLeft="5dp"
             android:gravity="start|center"
             android:text="SELL TU"
             android:textColor="@color/black"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:textStyle="bold"
+            android:fontFamily="@font/passionbold"
             />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:paddingLeft="5dp"
-            android:gravity="start|center"
-            android:text="$100"
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="$"
+                android:gravity="start|center"
+                android:textColor="@color/green"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/russo"/>
+            <TextView
+                android:id="@+id/medium_price"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:text="100"
+                android:textColor="@color/green"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/russo"
+                />
+
+            <TextView
+                android:id="@+id/medium_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="5dp"
+                android:gravity="start|center"
+                android:text="ACCESSORY"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/passionbold"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 
     <Button
+        android:id="@+id/medium_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
