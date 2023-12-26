@@ -6,12 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kh.edu.rupp.ite.admin_tinheywan.Model.data.EywanData
 import kh.edu.rupp.ite.admin_tinheywan.Model.data.UserData
 import kh.edu.rupp.ite.admin_tinheywan.Model.data.data
 import kh.edu.rupp.ite.admin_tinheywan.ViewModel.MVVM
+import kh.edu.rupp.ite.admin_tinheywan.adapter.MediumAdapter
+import kh.edu.rupp.ite.admin_tinheywan.adapter.StandardAdapter
 import kh.edu.rupp.ite.admin_tinheywan.adapter.UserAdapter
 import kh.edu.rupp.ite.admin_tinheywan.adapter.VipAdapter
 import kh.edu.rupp.ite.admin_tinheywan.databinding.FragmentHomeBinding
@@ -39,9 +42,25 @@ class UserHomeFragment : Fragment() {
         super.onResume()
         val sharedPreferences = requireActivity().getSharedPreferences("localstorage", Context.MODE_PRIVATE)
         var token = sharedPreferences.getString("TOKEN","").toString()
+        // clear total cart
+        sharedPreferences.edit().remove("total").apply()
+
+        //VIP
         GlobalScope.launch { mvvm.getAllVip(token) }
         mvvm.eywanvipData.observe(this){
             setupRecyclerView(it)
+        }
+
+        // MEDIUM
+        GlobalScope.launch { mvvm.getAllMedium(token) }
+        mvvm.eywanmediumData.observe(this){
+            setupRecyclerViewMedium(it)
+        }
+
+        //STANDARD
+        GlobalScope.launch { mvvm.getAllStandard(token) }
+        mvvm.eywanstandardData.observe(this){
+            setupRecyclerViewStandard(it)
         }
     }
 
@@ -52,6 +71,28 @@ class UserHomeFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireContext(),
                 RecyclerView.HORIZONTAL,false)
             adapter = VipAdapter(data)
+        }
+
+    }
+
+    private fun setupRecyclerViewMedium(data: data<List<EywanData>>){
+
+        binding!!.rvMedium.apply {
+            //Grid layout
+            layoutManager = LinearLayoutManager(requireContext(),
+                RecyclerView.HORIZONTAL,false)
+            adapter = MediumAdapter(data)
+        }
+
+    }
+
+    private fun setupRecyclerViewStandard(data: data<List<EywanData>>){
+
+        binding!!.rvStandard.apply {
+            //Grid layout
+            layoutManager = GridLayoutManager(requireContext(),2,
+                GridLayoutManager.VERTICAL,false)
+            adapter = StandardAdapter(data)
         }
 
     }

@@ -7,11 +7,91 @@
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="102dp"
-        android:layout_height="61dp"
-        android:text="User Order"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="109dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="10dp"
+        android:text="My Cart"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/anton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/anton"
+            android:gravity="start|center"
+            android:paddingLeft="10dp"
+            android:text="TOTAL :"
+            android:textColor="@color/black"
+            android:textSize="30dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end|center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/russo"
+                android:gravity="start|center"
+                android:text="$"
+                android:textColor="@color/green"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cart_total"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/russo"
+                android:gravity="start|center"
+                android:text="0"
+                android:textColor="@color/green"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PAYMENT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@
     tools:context=".View.UserActivity">
 
     <FrameLayout
-        android:id="@+id/MainFrame"
+        android:id="@+id/UserFrame"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

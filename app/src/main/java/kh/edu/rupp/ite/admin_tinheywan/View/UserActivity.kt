@@ -2,6 +2,7 @@ package kh.edu.rupp.ite.admin_tinheywan.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import kh.edu.rupp.ite.admin_tinheywan.R
 import kh.edu.rupp.ite.admin_tinheywan.View.fragment.*
@@ -18,8 +19,8 @@ class UserActivity : AppCompatActivity() {
         binding = ActivityUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // First show Home
-        showFragment(UserHomeFragment())
+//        // First show Home
+//        showFragment(UserHomeFragment())
 
         // set Event
         binding.UserNav.setOnItemSelectedListener { item ->
@@ -34,12 +35,26 @@ class UserActivity : AppCompatActivity() {
             }
             true
         }
+
+        // Detail
+        val intent = intent
+        val detail_vip = intent?.getStringExtra("detail_vip")
+        val cart = intent?.getStringExtra("cart")
+        if(detail_vip != null){
+            showFragment(DetailEywanFragment())
+        }else if(cart != null){
+            showFragment(UserOrderFragment())
+        }else{
+            // First show Home
+            showFragment(UserHomeFragment())
+        }
+
     }
 
     private fun showFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.MainFrame, fragment)
+        fragmentTransaction.replace(R.id.UserFrame, fragment)
         fragmentTransaction.commit()
     }
 

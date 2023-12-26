@@ -13,4 +13,6 @@
     <color name="orange">#FFC400</color>
     <color name="blue">#304FFE</color>
     <color name="vip">#ECF0F1</color>
+
+    <color name="g_icon_tint">#97AABD</color>
 </resources>

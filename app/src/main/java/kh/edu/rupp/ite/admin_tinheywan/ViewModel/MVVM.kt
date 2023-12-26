@@ -1,15 +1,12 @@
 package kh.edu.rupp.ite.admin_tinheywan.ViewModel
 
-import android.content.SharedPreferences
 import android.util.Log
 import androidx.lifecycle.*
+import com.google.gson.JsonObject
 import kh.edu.rupp.ite.admin_tinheywan.Model.ApiService
 import kh.edu.rupp.ite.admin_tinheywan.Model.RetrofitAuth
 import kh.edu.rupp.ite.admin_tinheywan.Model.RetrofitHelper
-import kh.edu.rupp.ite.admin_tinheywan.Model.data.EywanData
-import kh.edu.rupp.ite.admin_tinheywan.Model.data.UserData
-import kh.edu.rupp.ite.admin_tinheywan.Model.data.UserResponse
-import kh.edu.rupp.ite.admin_tinheywan.Model.data.data
+import kh.edu.rupp.ite.admin_tinheywan.Model.data.*
 
 class MVVM :ViewModel(){
 
@@ -51,6 +48,48 @@ class MVVM :ViewModel(){
     val eywanvipData : LiveData<data<List<EywanData>>>
         get() = _eywanvipData
 
+    private val _eywanmediumData = MutableLiveData<data<List<EywanData>>>()
+    val eywanmediumData : LiveData<data<List<EywanData>>>
+        get() = _eywanmediumData
+
+    private val _eywanstandardData = MutableLiveData<data<List<EywanData>>>()
+    val eywanstandardData : LiveData<data<List<EywanData>>>
+        get() = _eywanstandardData
+
+    private val _eywanimageData = MutableLiveData<data<List<EywanImageData>>>()
+    val eywanimageData : LiveData<data<List<EywanImageData>>>
+        get() = _eywanimageData
+
+    // User Info
+    private val _UserProfileData = MutableLiveData<data<UserData>>()
+    val UserProfileData : LiveData<data<UserData>>
+        get() = _UserProfileData
+
+    // SEARCH
+        // Clothes
+    private val _ClothesData = MutableLiveData<data<List<EywanData>>>()
+    val ClothesData : LiveData<data<List<EywanData>>>
+        get() = _ClothesData
+        // Accessory
+    private val _AccessoryData = MutableLiveData<data<List<EywanData>>>()
+    val AccessoryData : LiveData<data<List<EywanData>>>
+        get() = _AccessoryData
+        // Material
+    private val _MaterialData = MutableLiveData<data<List<EywanData>>>()
+    val MaterialData : LiveData<data<List<EywanData>>>
+        get() = _MaterialData
+        // Other
+    private val _OtherData = MutableLiveData<data<List<EywanData>>>()
+    val OtherData : LiveData<data<List<EywanData>>>
+        get() = _OtherData
+    // Filter
+    private val _FilterData = MutableLiveData<data<List<EywanData>>>()
+    val FilterData : LiveData<data<List<EywanData>>>
+        get() = _FilterData
+    // Cart
+    private val _CartData = MutableLiveData<data<List<EywanCartData>>>()
+    val CartData : LiveData<data<List<EywanCartData>>>
+        get() = _CartData
 
       suspend fun loadEywan(){
           apiService = RetrofitHelper.getInstance().create(ApiService::class.java)
@@ -123,6 +162,109 @@ class MVVM :ViewModel(){
             _eywanvipData.postValue(task.body())
         }else{
             Log.d("oooo","Error")
+        }
+    }
+
+    suspend fun getAllMedium(Token:String){
+        apiService = RetrofitAuth.getInstance(Token).create(ApiService::class.java)
+        val task = apiService.getallmedium()
+        if (task.isSuccessful){
+            _eywanmediumData.postValue(task.body())
+        }else{
+            Log.d("oooo","Error")
+        }
+    }
+
+    suspend fun getAllStandard(Token:String){
+        apiService = RetrofitAuth.getInstance(Token).create(ApiService::class.java)
+        val task = apiService.getallstandard()
+        if (task.isSuccessful){
+            _eywanstandardData.postValue(task.body())
+        }else{
+            Log.d("oooo","Error")
+        }
+    }
+
+    suspend fun getEywanImageById(Token:String, eywan_id: Int){
+        apiService = RetrofitAuth.getInstance(Token).create(ApiService::class.java)
+        val task = apiService.geteywanimagebyid(eywan_id)
+        if (task.isSuccessful){
+            _eywanimageData.postValue(task.body())
+        }else{
+            Log.d("oooo","Error")
+        }
+    }
+
+    suspend fun getUserInfo(Token:String){
+        apiService = RetrofitAuth.getInstance(Token).create(ApiService::class.java)
+        val task = apiService.getuser()
+        if(task.isSuccessful){
+            _UserProfileData.postValue(task.body())
+        }else{
+            Log.d("oooo","Error api")
+        }
+    }
+
+    suspend fun getClothes(Token:String){
+        apiService = RetrofitAuth.getInstance(Token).create(ApiService::class.java)
+        val task = apiService.getclothes()
+        if(task.isSuccessful){
+            _ClothesData.postValue(task.body())
+        }else{
+            Log.d("oooo","Error api")
+        }
+    }
+
+    suspend fun getAccessory(Token:String){
+        apiService = RetrofitAuth.getInstance(Token).create(ApiService::class.java)
+        val task = apiService.getaccessory()
+        if(task.isSuccessful){
+            _AccessoryData.postValue(task.body())
+        }else{
+            Log.d("oooo","Error api")
+        }
+    }
+
+    suspend fun getMaterial(Token:String){
+        apiService = RetrofitAuth.getInstance(Token).create(ApiService::class.java)
+        val task = apiService.getmaterial()
+        if(task.isSuccessful){
+            _MaterialData.postValue(task.body())
+        }else{
+            Log.d("oooo","Error api")
+        }
+    }
+
+    suspend fun getOther(Token:String){
+        apiService = RetrofitAuth.getInstance(Token).create(ApiService::class.java)
+        val task = apiService.getother()
+        if(task.isSuccessful){
+            _OtherData.postValue(task.body())
+        }else{
+            Log.d("oooo","Error api")
+        }
+    }
+
+    suspend fun getFilter(Token:String,text:String){
+        apiService = RetrofitAuth.getInstance(Token).create(ApiService::class.java)
+        val body = JsonObject().apply {
+            addProperty("text",text)
+        }
+        val task = apiService.getfilter(body)
+        if(task.isSuccessful){
+            _FilterData.postValue(task.body())
+        }else{
+            Log.d("oooo","Error api")
+        }
+    }
+
+    suspend fun getAllCart(Token:String){
+        apiService = RetrofitAuth.getInstance(Token).create(ApiService::class.java)
+        val task = apiService.getallcart()
+        if(task.isSuccessful){
+            _CartData.postValue(task.body())
+        }else{
+            Log.d("oooo","Error api")
         }
     }
 
