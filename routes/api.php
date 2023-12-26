@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\eywan_imageController;
 use App\Http\Controllers\eywanController;
+use App\Http\Controllers\user\userController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -44,7 +45,20 @@ Route::middleware('auth:sanctum')->group(function(){
 
     //user
     Route::get('/getallvip',[eywanController::class,'getallvip']);
+    Route::get('/getallmedium',[eywanController::class,'getallmedium']);
+    Route::get('/getallstandard',[eywanController::class,'getallstandard']);
+    Route::get('/geteywanimagebyid/{id}',[eywanController::class,'geteywanimagebyid']);
 
+    Route::resource('/getuser',userController::class);
+    Route::get('getclothes',[eywanController::class,'getclothes']);
+    Route::get('getaccessory',[eywanController::class,'getaccessory']);
+    Route::get('getmaterial',[eywanController::class,'getmaterial']);
+    Route::get('getother',[eywanController::class,'getother']);
+
+    Route::post('/filter',[eywanController::class,'filter']);
+    Route::post('/cart',[eywanController::class,'cart']);
+    Route::get('/getcart',[eywanController::class,'getcart']);
+    Route::delete('/getcartdelete/{id}',[eywanController::class,'getcartdelete']);
 });
 
 
