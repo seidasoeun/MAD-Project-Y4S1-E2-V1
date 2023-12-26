@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:orientation="vertical"
+    android:background="@color/vip"
+    android:layout_margin="10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/vip_image"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/image_blank"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/vip_title"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:padding="10dp"
+                android:text="SELL CLOTHES"
+                android:textSize="25dp"
+
+                android:textColor="@color/black"
+                android:fontFamily="@font/passionbold"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="$"
+                    android:gravity="start|center"
+                    android:textColor="@color/green"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/russo"/>
+
+                <TextView
+                    android:id="@+id/vip_price"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center"
+                    android:text="10"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green"
+                    android:fontFamily="@font/russo"
+                    />
+
+                <TextView
+                    android:id="@+id/vip_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:text="ACCESSORY"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/passionbold"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/vip_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add to cart"/>
+    </LinearLayout>
+
+
+</LinearLayout>

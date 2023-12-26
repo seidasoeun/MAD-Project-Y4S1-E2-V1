@@ -12,5 +12,10 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+<<<<<<< HEAD
 rootProject.name = "Tinh Eywan"
 include ':app'
+=======
+rootProject.name = "Admin_Tinheywan"
+include ':app'
+>>>>>>> hout_frontend

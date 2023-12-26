@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="Home"
+<<<<<<< HEAD
         android:icon="@mipmap/ic_home"/>
     <item android:title="Search"
         android:icon="@mipmap/ic_search"/>
@@ -8,4 +9,14 @@
         android:icon="@mipmap/ic_shopping"/>
     <item android:title="Profile"
         android:icon="@mipmap/ic_account"/>
+=======
+        android:id="@+id/home"
+        android:icon="@drawable/home_nav"/>
+    <item android:title="Post Product"
+        android:id="@+id/product"
+        android:icon="@drawable/shop_nav"/>
+    <item android:title="Profile"
+        android:id="@+id/profile"
+        android:icon="@drawable/account_nav"/>
+>>>>>>> hout_frontend
 </menu>
