@@ -66,6 +66,7 @@ class RegisterActivity : AppCompatActivity() {
                         addProperty("email",email_value)
                         addProperty("password",password_value)
                         addProperty("name",username_value)
+                        addProperty("image","https://firebasestorage.googleapis.com/v0/b/tinheywan.appspot.com/o/images%2Fpic.png?alt=media&token")
                     }
                     val result = apiService.createUser(body)
                     if (result.isSuccessful){
