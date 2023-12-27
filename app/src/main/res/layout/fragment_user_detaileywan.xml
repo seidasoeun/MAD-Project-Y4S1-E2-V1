@@ -17,13 +17,12 @@
             android:id="@+id/detail_imageslider"
             android:layout_width="match_parent"
             android:layout_height="280dp"
-            android:flipInterval="5000"
             android:autoStart="true"
+            android:flipInterval="5000"
             android:inAnimation="@android:anim/slide_in_left"
             android:outAnimation="@android:anim/slide_out_right"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            >
+            app:layout_constraintTop_toTopOf="parent">
 
             <!--        <ImageView-->
             <!--            android:layout_width="match_parent"-->
@@ -34,27 +33,29 @@
 
         <ImageView
             android:id="@+id/detail_goback"
-            android:layout_width="65dp"
-            android:layout_height="60dp"
-            android:layout_centerVertical="true"
+            android:layout_width="48dp"
+            android:layout_height="40dp"
             android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
             app:srcCompat="@drawable/goback" />
 
         <ImageView
             android:id="@+id/detail_left"
-            android:layout_width="73dp"
-            android:layout_height="68dp"
+            android:layout_width="45dp"
+            android:layout_height="44dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/left"
-            />
+            android:src="@drawable/left" />
 
         <ImageView
             android:id="@+id/detail_right"
-            android:layout_width="73dp"
-            android:layout_height="68dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
+            android:layout_width="48dp"
+            android:layout_height="44dp"
+            android:layout_alignTop="@+id/detail_left"
 
+            android:layout_alignBottom="@+id/detail_left"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
             android:src="@drawable/right" />
 
     </RelativeLayout>
