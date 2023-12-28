@@ -4,12 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    tools:context=".MainActivity">
-
-=======
     tools:context=".View.MainActivity">
->>>>>>> hout_frontend
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,24 +15,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<<<<<<< HEAD
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/shoppingHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F5F7F8"
-        android:elevation="0dp"
-        app:itemPaddingBottom="10dp"
-        app:itemPaddingTop="10dp"
-        app:itemRippleColor="@color/cardview_dark_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_bar">
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-=======
->>>>>>> hout_frontend
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,11 +1,5 @@
 <resources>
-<<<<<<< HEAD
-
-    <string name="app_name">Tinh Eywan</string>
-    <string name="let_is_login">Let\'s Login</string>
-    <string name="done_have_an_account_register">Don\'t have an account? Register</string>
-=======
-    <string name="app_name">Admin_Tinheywan</string>
+    <string name="app_name">Tinh eywan</string>
 
     <!--  Admin  -->
     <string name="dashboard"><u>Dashboard</u></string>
@@ -16,7 +10,6 @@
     <string name="let_is_login">Let is login</string>
     <string name="done_have_an_account_register"><u>Don\'t have an account? Register</u></string>
     <string name="have_an_account_register"><u>have an account? Login</u></string>
->>>>>>> hout_frontend
     <string name="forgot_password">Forgot password</string>
     <string name="login">Login</string>
     <string name="let_register">Let\'s Register</string>
@@ -25,17 +18,10 @@
     <string name="last_name">Last Name</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-<<<<<<< HEAD
-    <string name="register">Register</string>
-    <string name="reset_password">Reset Password</string>
-    <string name="reset_password_message">we will send you the password reset link to your email
-    </string>
-=======
     <string name="cpassword">Confirm Password</string>
     <string name="register">Register</string>
     <string name="reset_password">Reset Password</string>
     <string name="reset_password_message">we will send you the password reset link to your email</string>
->>>>>>> hout_frontend
     <string name="cancel">Cancel</string>
     <string name="send">Send</string>
     <string name="search">Search Now</string>
@@ -46,8 +32,6 @@
     <string name="size">Size</string>
     <string name="original">Original</string>
     <string name="nike">Nike</string>
-<<<<<<< HEAD
-=======
     <!--  SETTING  -->
     <string name="g_settings">Settings</string>
     <string name="g_edit_personal_details">edit personal details</string>
@@ -73,6 +57,5 @@
     <string name="otp">OTP</string>
     <string name="plus">plus</string>
     <string name="min">min</string>
->>>>>>> hout_frontend
 
 </resources>

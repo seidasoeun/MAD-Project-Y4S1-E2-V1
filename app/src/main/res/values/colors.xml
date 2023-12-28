@@ -5,11 +5,6 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-<<<<<<< HEAD
-
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-=======
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
@@ -20,5 +15,4 @@
     <color name="vip">#ECF0F1</color>
 
     <color name="g_icon_tint">#97AABD</color>
->>>>>>> hout_frontend
 </resources>

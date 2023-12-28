@@ -1,35 +1,20 @@
 {
   "project_info": {
-<<<<<<< HEAD
-    "project_number": "308678035131",
-    "project_id": "tinh-eywan",
-    "storage_bucket": "tinh-eywan.appspot.com"
-=======
     "project_number": "1091811051961",
     "project_id": "tinheywan",
     "storage_bucket": "tinheywan.appspot.com"
->>>>>>> hout_frontend
   },
   "client": [
     {
       "client_info": {
-<<<<<<< HEAD
-        "mobilesdk_app_id": "1:308678035131:android:0fe29ca01b2fd222230b9e",
-        "android_client_info": {
-          "package_name": "kh.edu.rupp.ite.tinheywan"
-=======
         "mobilesdk_app_id": "1:1091811051961:android:1252272dc74cc9e23b8e68",
         "android_client_info": {
           "package_name": "kh.edu.rupp.ite.admin_tinheywan"
->>>>>>> hout_frontend
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-<<<<<<< HEAD
-          "current_key": "AIzaSyBf53haQU9-1bQ4FHj1r6QXvjFt_hia_fM"
-=======
           "current_key": "AIzaSyA1k8uD7mqToZWx8Lh8ENTRICyL6iQGR4E"
         }
       ],
@@ -69,7 +54,6 @@
       "api_key": [
         {
           "current_key": "AIzaSyA1k8uD7mqToZWx8Lh8ENTRICyL6iQGR4E"
->>>>>>> hout_frontend
         }
       ],
       "services": {

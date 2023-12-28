@@ -54,7 +54,7 @@
                 android:layout_height="match_parent"
                 android:background="#F1EFEF"
                 android:ems="10"
-                android:hint="@string/email"
+                android:hint="title"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="15dp" />
         </androidx.cardview.widget.CardView>
