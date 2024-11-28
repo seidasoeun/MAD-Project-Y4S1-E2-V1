@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\addressController;
+use App\Http\Controllers\addressCustome;
 use App\Http\Controllers\admin\adminController;
 use App\Http\Controllers\admin\adminCustome;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\eywan_imageController;
 use App\Http\Controllers\eywanController;
+use App\Http\Controllers\flutter\f_eywanController;
 use App\Http\Controllers\user\userController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,45 +24,53 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/register',[AuthController::class,'register']);
-Route::post('/login',[AuthController::class,'login']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
 // Admin
-Route::resource('getalluser',adminController::class);
-Route::get('countuser',[adminCustome::class,'count_user']);
-Route::get('counteywan',[adminCustome::class,'count_eywan']);
-Route::get('counteywansold',[adminCustome::class,'count_eywansold']);
-    //profile
-Route::get('adminprofile',[adminCustome::class,'adminprofile']);
+Route::resource('getalluser', adminController::class);
+Route::get('countuser', [adminCustome::class, 'count_user']);
+Route::get('counteywan', [adminCustome::class, 'count_eywan']);
+Route::get('counteywansold', [adminCustome::class, 'count_eywansold']);
+//profile
+Route::get('adminprofile', [adminCustome::class, 'adminprofile']);
 
 
-Route::middleware('auth:sanctum')->group(function(){
+Route::middleware('auth:sanctum')->group(function () {
+    //http://localhost:8000/api/getallvip
 
     //admin
-    Route::resource('/eywan',Controller::class);
-    Route::resource('/eywan_image',eywan_imageController::class);
-    Route::get('adminprofile',[adminCustome::class,'adminprofile']);
-    Route::delete('deleteuserbyid/{id}',[adminCustome::class,'deleteuserbyid']);
-    Route::resource('/eywan',Controller::class);
-    Route::resource('/eywan_image',eywan_imageController::class);
+    Route::resource('/eywan', Controller::class);
+    Route::resource('/eywan_image', eywan_imageController::class);
+    Route::get('adminprofile', [adminCustome::class, 'adminprofile']);
+    Route::delete('deleteuserbyid/{id}', [adminCustome::class, 'deleteuserbyid']);
 
     //user
-    Route::get('/getallvip',[eywanController::class,'getallvip']);
-    Route::get('/getallmedium',[eywanController::class,'getallmedium']);
-    Route::get('/getallstandard',[eywanController::class,'getallstandard']);
-    Route::get('/geteywanimagebyid/{id}',[eywanController::class,'geteywanimagebyid']);
+    Route::get('/getallvip', [eywanController::class, 'getallvip']);
+    Route::get('/getallmedium', [eywanController::class, 'getallmedium']);
+    Route::get('/getallstandard', [eywanController::class, 'getallstandard']);
+    Route::get('/geteywanimagebyid/{id}', [eywanController::class, 'geteywanimagebyid']);
 
-    Route::resource('/getuser',userController::class);
-    Route::get('getclothes',[eywanController::class,'getclothes']);
-    Route::get('getaccessory',[eywanController::class,'getaccessory']);
-    Route::get('getmaterial',[eywanController::class,'getmaterial']);
-    Route::get('getother',[eywanController::class,'getother']);
+    Route::resource('/getuser', userController::class);
+    Route::get('getclothes', [eywanController::class, 'getclothes']);
+    Route::get('getaccessory', [eywanController::class, 'getaccessory']);
+    Route::get('getmaterial', [eywanController::class, 'getmaterial']);
+    Route::get('getother', [eywanController::class, 'getother']);
 
-    Route::post('/filter',[eywanController::class,'filter']);
-    Route::post('/cart',[eywanController::class,'cart']);
-    Route::get('/getcart',[eywanController::class,'getcart']);
-    Route::delete('/getcartdelete/{id}',[eywanController::class,'getcartdelete']);
+    Route::post('/filter', [eywanController::class, 'filter']);
+    Route::post('/cart', [eywanController::class, 'cart']);
+    Route::get('/getcart', [eywanController::class, 'getcart']);
+    Route::delete('/getcartdelete/{id}', [eywanController::class, 'getcartdelete']);
+
+    // FLUTTER
+    Route::get('/f_getallaccessory', [f_eywanController::class, 'f_getallaccessory']);
+    Route::get('/f_getallmaterial', [f_eywanController::class, 'f_getallmaterial']);
+    Route::get('/f_getallclothes', [f_eywanController::class, 'f_getallclothes']);
+    Route::get('/f_getallother', [f_eywanController::class, 'f_getallother']);
+    Route::get('/f_getEywanbyid/{id}', [f_eywanController::class, 'f_getEywanbyid']);
+    Route::resource('/f_address', addressController::class);
+    Route::get('/f_getmarkaddress', [addressCustome::class, 'getMarkAddress']);
+    //ADMIN
+    Route::post('/storesold', [adminCustome::class, 'StoreSold']);
+    Route::get('/getdatasold', [adminCustome::class, 'GetDataSold']);
 });
-
-
-

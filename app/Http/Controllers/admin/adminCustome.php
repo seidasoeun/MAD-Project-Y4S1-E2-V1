@@ -11,30 +11,52 @@ use Illuminate\Support\Facades\Auth;
 
 class adminCustome extends Controller
 {
-    public function count_user(){
+    public function count_user()
+    {
         $data = User::count();
         return ($data);
     }
 
-    public function count_eywan(){
+    public function count_eywan()
+    {
         $data = eywanModel::count();
         return ($data);
     }
 
-    public function count_eywansold(){
+    public function count_eywansold()
+    {
         $data = eywan_soldModel::count();
         return ($data);
     }
 
     // Profile & all image user
-    public function adminprofile(){
+    public function adminprofile()
+    {
         $data = Auth::user();
         return ($data);
     }
 
     // delete user by id
-    public function deleteuserbyid($id){
-        $data = User::where('id',$id)->delete();
+    public function deleteuserbyid($id)
+    {
+        $data = User::where('id', $id)->delete();
         return ($data);
+    }
+
+    public function StoreSold(Request $req)
+    {
+        $req->merge(["user_id" => Auth::user()->id]);
+        $data = eywan_soldModel::create($req->all());
+        return response([
+            "data" => $data,
+        ]);
+    }
+
+    public function GetDataSold()
+    {
+        $data = eywan_soldModel::all();
+        return response([
+            "data" => $data,
+        ]);
     }
 }

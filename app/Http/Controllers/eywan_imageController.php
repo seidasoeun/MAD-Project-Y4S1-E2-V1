@@ -8,10 +8,16 @@ use Illuminate\Support\Facades\Auth;
 
 class eywan_imageController extends Controller
 {
-    public function store(Request $req){
-        $req->merge(["user_id"=>Auth::user()->id]);
+    public function store(Request $req)
+    {
+        $req->merge(["user_id" => Auth::user()->id]);
         $data = eywan_imageModel::create($req->all());
         return ($data);
     }
 
+    public function destroy($id)
+    {
+        $data = eywan_imageModel::where('eywan_id', $id)->delete();
+        return ($data);
+    }
 }
